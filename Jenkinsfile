@@ -34,7 +34,7 @@ pipeline {
                               --publish 15672:15672 \
                               --env RABBITMQ_DEFAULT_USER=guest \
                               --env RABBITMQ_DEFAULT_PASS=guest \
-                              rabbitmq'
+                              rabbitmq:3-management'
 
                     } catch (Exception e) {
                         sh "echo $e; exit 1"
