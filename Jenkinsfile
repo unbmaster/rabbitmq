@@ -30,7 +30,7 @@ pipeline {
                               --mode replicated \
                               --replicas 1 \
                               --network app-net \
-                              --endpoint-mode dnsrr \
+                              --publish 5672:5672 \
                               --env RABBITMQ_DEFAULT_USER=guest \
                               --env RABBITMQ_DEFAULT_PASS=guest \
                               rabbitmq:3-management'
