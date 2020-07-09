@@ -32,7 +32,6 @@ pipeline {
                               --network app-net \
                               --publish 5672:5672 \
                               --publish 15672:15672 \
-                              --mount type=bind,src=/var/lib/jenkins/workspace/${JOB_NAME}/data,dst=/var/lib/rabbitmq/mnesia/,ro=true \
                               --env RABBITMQ_DEFAULT_USER=guest \
                               --env RABBITMQ_DEFAULT_PASS=guest \
                               rabbitmq:3-management'
