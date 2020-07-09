@@ -33,8 +33,8 @@ pipeline {
                               --endpoint-mode dnsrr \
                               --env RABBITMQ_DEFAULT_USER=guest \
                               --env RABBITMQ_DEFAULT_PASS=guest \
-                              --mount type=bind,src=/var/lib/jenkins/workspace/${JOB_NAME}/data,dst=/var/lib/rabbitmq,ro=true \
-                              --mount type=bind,src=/var/lib/jenkins/workspace/${JOB_NAME}/data/logs,dst=/var/log/rabbitmq,ro=true \
+                              --mount type=bind,src=/var/lib/jenkins/workspace/${JOB_NAME},dst=/var/lib/rabbitmq,ro=true \
+                              --mount type=bind,src=/var/lib/jenkins/workspace/${JOB_NAME}/logs,dst=/var/log/rabbitmq,ro=true \
                               rabbitmq:3-management'
 
                     } catch (Exception e) {
