@@ -14,7 +14,7 @@ pipeline {
                     try {
                         git([url: 'https://github.com/unbmaster/rabbitmq', branch: 'master'])
                     } catch (Exception e) {
-                    sh "echo $e; exit 1"
+                        sh "echo $e; exit 1"
                     }
                 }
             }
@@ -31,6 +31,7 @@ pipeline {
                               --replicas 1 \
                               --network app-net \
                               --publish 5672:5672 \
+                              --publish 15672:15672 \
                               --env RABBITMQ_DEFAULT_USER=guest \
                               --env RABBITMQ_DEFAULT_PASS=guest \
                               rabbitmq:3-management'
